@@ -1,0 +1,5 @@
+__pycache__/
+*.xlsx
+*.csv
+map_escola.txt
+gen_map_escola.py
