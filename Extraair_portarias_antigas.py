@@ -336,7 +336,7 @@ MAP_CIDADE = [
     ('CAMPO GRANDE DO PIAUI', 'CAMPO GRANDE DO PIAUÍ'),
     ('ALVORADA DO GURGUÉIA', 'ALVORADA DO GURGUÉIA'),
     ('CURRAL NOVO DO PIAUI', 'CURRAL NOVO DO PIAUÍ'),
-    ('SAO MIGUEL DO TAPUIO', 'SÃO MIGUEL DO FIDALGO'),
+    ('SAO MIGUEL DO TAPUIO', 'SÃO MIGUEL DO TAPUIO'),
     ('CONCEIÇAO DO CANINDE', 'CONCEIÇÃO DO CANINDÉ'),
     ('SÃO GONÇALO DO PIAUÍ', 'SÃO GONÇALO DO PIAUÍ'),
     ('SÃO GONÇALO DO GURGUEIA', 'SÃO GONÇALO DO GURGUÉIA'),
@@ -351,7 +351,7 @@ MAP_CIDADE = [
     ('REDENCÃO DO GURGUÉIA', 'REDENÇÃO DO GURGUÉIA'),
     ('CONCEICAO DO CANINDE', 'CONCEIÇÃO DO CANINDÉ'),
     ('CAMPO LARGO DO PIAUÍ', 'CAMPO LARGO DO PIAUÍ'),
-    ('SÃO MIGUEL DO TAPUIO', 'SÃO MIGUEL DO FIDALGO'),
+    ('SÃO MIGUEL DO TAPUIO', 'SÃO MIGUEL DO TAPUIO'),
     ('SAO GONCALO DO PIAUI', 'SÃO GONÇALO DO PIAUÍ'),
     ('SÃO GONCALO DO PIAUI', 'SÃO GONÇALO DO PIAUÍ'),
     ('SÃO GONCALO DO PIAUÍ', 'SÃO GONÇALO DO PIAUÍ'),
@@ -931,6 +931,16 @@ MAP_CIDADE = [
     ('HUGO', 'HUGO NAPOLEÃO'),
 ]
 
+# Lista de palavras-chave que indicam que o texto NÃO é o nome de uma pessoa
+KEYWORDS_NOT_NAME = [
+    'UNIDADE ESCOLAR', 'UNIDADE ESCOLAR', 'U. E.', 'U.E.', 'CETI', 'C.E.T.I.', 'CEEP', 'C.E.E.P.', 'CEJA',
+    'CENTRO ESTADUAL', 'CENTRO DE ENSINO', 'CENTRO DE EDUCAÇÃO', 'ESCOLA', 'GINÁSIO', 'COLÉGIO', 
+    'GERÊNCIA', 'GERENCIA', 'REGIONAL', 'GABINETE', 'SECRETÁRIO', 'SECRETARIA', 'SECRETARIO',
+    'SUPERVISOR', 'SUPERVISORA', 'COORDENADOR', 'DIRETOR', 'PRESTAÇÃO', 'FISCALIZAÇÃO', 'FORMAÇÃO', 
+    'MEDIAÇÃO', 'TECNOLÓGICA', 'ESTADO DO PIAUÍ', 'EDUCAÇÃO', 'CURSOS', 'SUPORTE TÉCNICO', 
+    'KITS', 'SISTEMA PRISIONAL', 'EDUCACENSO', 'COMISSÃO', 'PROGRAMA', 'CONTRATO', 'GESTOR'
+]
+
 MAP_GRE = {
     'ACAUÃ': '17ª', 'AGRICOLÂNDIA': '6ª', 'ÁGUA BRANCA': '6ª', 'ALAGOINHA DO PIAUÍ': '16ª', 'ALEGRETE DO PIAUÍ': '16ª',
     'ALTO LONGÁ': '18ª', 'ALTOS': '18ª', 'ALVORADA DO GURGUEIA': '14ª', 'AMARANTE': '6ª', 'ANGICAL': '6ª',
@@ -985,6 +995,58 @@ MAP_GRE = {
 
 # MAP_ESCOLA gerado a partir da lista fornecida pelo usuário
 MAP_ESCOLA = [
+    # === NOVAS UNIDADES ADICIONADAS / REORGANIZADAS ===
+    # Unidades Escolares (U.E.)
+    ('UNIDADE ESCOLAR 13 DE MARÇO', 'UNIDADE ESCOLAR 13 DE MARÇO'),
+    ('UNIDADE ESCOLAR CEL. JOSÉ NOGUEIRA', 'UNIDADE ESCOLAR CEL. JOSÉ NOGUEIRA'),
+    ('UNIDADE ESCOLAR CLEMENTINO MARTINS', 'UNIDADE ESCOLAR CLEMENTINO MARTINS'),
+    ('UNIDADE ESCOLAR DEP. JOAQUIM GOMES CALADO', 'UNIDADE ESCOLAR DEP. JOAQUIM GOMES CALADO'),
+    ('UNIDADE ESCOLAR DES. JOÃO PACHECO CAVALCANTE', 'UNIDADE ESCOLAR DES. JOÃO PACHECO CAVALCANTE'),
+    ('UNIDADE ESCOLAR DOM HELDER CAMARA', 'UNIDADE ESCOLAR DOM HELDER CAMARA'),
+    ('UNIDADE ESCOLAR DONA ROSAURA MUNIZ BARRETO', 'UNIDADE ESCOLAR DONA ROSAURA MUNIZ BARRETO'),
+    ('UNIDADE ESCOLAR ELIAS RAIMUNDO DE LIMA', 'UNIDADE ESCOLAR ELIAS RAIMUNDO DE LIMA'),
+    ('UNIDADE ESCOLAR ENEAS NOGUEIRA', 'UNIDADE ESCOLAR ENEAS NOGUEIRA'),
+    ('UNIDADE ESCOLAR ESTADO DE SÃO PAULO', 'UNIDADE ESCOLAR ESTADO DE SÃO PAULO'),
+    ('UNIDADE ESCOLAR FIRMINA SOBREIRA', 'UNIDADE ESCOLAR FIRMINA SOBREIRA'),
+    ('UNIDADE ESCOLAR FLORISA SILVA', 'UNIDADE ESCOLAR FLORISA SILVA'),
+    ('UNIDADE ESCOLAR FRANCO RODRIGUES', 'UNIDADE ESCOLAR FRANCO RODRIGUES'),
+    ('UNIDADE ESCOLAR FRUTUOSO JUSSELINO', 'UNIDADE ESCOLAR FRUTUOSO JUSSELINO'),
+    ('UNIDADE ESCOLAR GERVÁSIO COSTA', 'UNIDADE ESCOLAR GERVÁSIO COSTA'),
+    ('UNIDADE ESCOLAR IRAPUÁ', 'UNIDADE ESCOLAR IRAPUÁ'),
+    ('UNIDADE ESCOLAR JOÃO ALVES DE MACEDO FILHO', 'UNIDADE ESCOLAR JOÃO ALVES DE MACEDO FILHO'),
+    ('UNIDADE ESCOLAR JOMÁSIO DOS SANTOS BARROS', 'UNIDADE ESCOLAR JOMÁSIO DOS SANTOS BARROS'),
+    ('UNIDADE ESCOLAR MANOEL SOARES TEXEIRA', 'UNIDADE ESCOLAR MANOEL SOARES TEXEIRA'),
+    ('UNIDADE ESCOLAR MATIAS OLÍMPIO', 'UNIDADE ESCOLAR MATIAS OLÍMPIO'),
+    ('UNIDADE ESCOLAR MENINO JOÃO PEDRO', 'UNIDADE ESCOLAR MENINO JOÃO PEDRO'),
+    ('UNIDADE ESCOLAR MIGUEL NUNES SALES', 'UNIDADE ESCOLAR MIGUEL NUNES SALES'),
+    ('UNIDADE ESCOLAR NONATO VALENTE', 'UNIDADE ESCOLAR NONATO VALENTE'),
+    ('UNIDADE ESCOLAR OLEGÁRIO AURELIANO DE SOUSA', 'UNIDADE ESCOLAR OLEGÁRIO AURELIANO DE SOUSA'),
+    ('UNIDADE ESCOLAR OSVALDO DA COSTA E SILVA', 'UNIDADE ESCOLAR OSVALDO DA COSTA E SILVA'),
+    ('UNIDADE ESCOLAR PROF. JAMES AZEVEDO', 'UNIDADE ESCOLAR PROF. JAMES AZEVEDO'),
+    ('UNIDADE ESCOLAR PROFESSOR JOSÉ CAMILLO DA SILVEIRA FILHO', 'UNIDADE ESCOLAR PROFESSOR JOSÉ CAMILLO DA SILVEIRA FILHO'),
+    ('UNIDADE ESCOLAR RITINHA ROSA DE MOURA', 'UNIDADE ESCOLAR RITINHA ROSA DE MOURA'),
+    ('UNIDADE ESCOLAR RUI BARBOSA', 'UNIDADE ESCOLAR RUI BARBOSA'),
+    ('UNIDADE ESCOLAR SANTA MARIA DAS VASSOURAS', 'UNIDADE ESCOLAR SANTA MARIA DAS VASSOURAS'),
+    ('UNIDADE ESCOLAR SÃO JOÃO BATISTA', 'UNIDADE ESCOLAR SÃO JOÃO BATISTA'),
+    ('UNIDADE ESCOLAR SEVERIANO SOUSA', 'UNIDADE ESCOLAR SEVERIANO SOUSA'),
+    ('UNIDADE ESCOLAR TERESINHA NUNES', 'UNIDADE ESCOLAR TERESINHA NUNES'),
+
+    # Centros Estaduais de Tempo Integral (CETI)
+    ('CENTRO ESTADUAL DE TEMPO INTEGRAL FENELON CASTELO BRANCO', 'CENTRO ESTADUAL DE TEMPO INTEGRAL FENELON CASTELO BRANCO'),
+    ('CENTRO ESTADUAL DE TEMPO INTEGRAL JOSÉ AMÁVEL', 'CENTRO ESTADUAL DE TEMPO INTEGRAL JOSÉ AMÁVEL'),
+    ('CENTRO ESTADUAL DE TEMPO INTEGRAL MONSENHOR RAIMUNDO NONATO MELO', 'CENTRO ESTADUAL DE TEMPO INTEGRAL MONSENHOR RAIMUNDO NONATO MELO'),
+    ('CENTRO ESTADUAL DE TEMPO INTEGRAL PEQUENA RUBIM', 'CENTRO ESTADUAL DE TEMPO INTEGRAL PEQUENA RUBIM'),
+    ('CENTRO ESTADUAL DE TEMPO INTEGRAL PROF. PIRES DE CASTRO', 'CENTRO ESTADUAL DE TEMPO INTEGRAL PROF. PIRES DE CASTRO'),
+    ('CENTRO ESTADUAL DE TEMPO INTEGRAL SOLANGE SINIMBU VIANA AREA LEÃO', 'CENTRO ESTADUAL DE TEMPO INTEGRAL SOLANGE SINIMBU VIANA AREA LEÃO'),
+    ('CETI PROFº. PINHEIRO MACHADO', 'CETI PROFº. PINHEIRO MACHADO'),
+
+    # Centros de Educação Profissional e Especializada
+    ('CENTRO EDUCACIONAL ESPECIALIZADO CASA ODILO COSTA FILHO - UNIDADE EDUCACIONAL DA ASSOCIAÇÃO PESTALOZZI DE TERESINA', 'CENTRO EDUCACIONAL ESPECIALIZADO CASA ODILO COSTA FILHO - UNIDADE EDUCACIONAL DA ASSOCIAÇÃO PESTALOZZI DE TERESINA'),
+    ('CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL FRANCISCO ALVES DE SOUSA (CHICO ABÍLIO)', 'CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL FRANCISCO ALVES DE SOUSA (CHICO ABÍLIO)'),
+    ('CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL JOÃO CLÍMACO D\'ALMEIDA', 'CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL JOÃO CLÍMACO D\'ALMEIDA'),
+    ('CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL RURAL PROF. MARIA AMÁLIA', 'CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL RURAL PROF. MARIA AMÁLIA'),
+    
+    # Lista original
     ('CENTRO DE ESTIMULAÇÃO PARA CRIANÇAS COM DEFICIÊNCIA SENSORIAL AUDITIVA E VISUAL -"MAURO CÉSAR EVARISTO" -  CES', 'CENTRO DE ESTIMULAÇÃO PARA CRIANÇAS COM DEFICIÊNCIA SENSORIAL AUDITIVA E VISUAL -"MAURO CÉSAR EVARISTO" -  CES'),
     ('CENTRO DE ESTIMULAÇÃO PARA CRIANÇAS COM DEFICIÊNCIA SENSORIAL - AUDITIVO E VISUAL - "MAURO CÉSAR EVARISTO"', 'CENTRO DE ESTIMULAÇÃO PARA CRIANÇAS COM DEFICIÊNCIA SENSORIAL - AUDITIVO E VISUAL - "MAURO CÉSAR EVARISTO"'),
     ('CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL EM SAÚDE MONS. JOSÉ LUIZ BARBOSA CORTEZ - PREMEN SUL', 'CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL EM SAÚDE MONS. JOSÉ LUIZ BARBOSA CORTEZ - PREMEN SUL'),
@@ -1917,7 +1979,7 @@ MAP_ESCOLA = [
     ('CETI POLIVALENTE LIMA REBELO', 'CETI POLIVALENTE LIMA REBELO'),
     ('CETI DOMINGOS ALVES DA COSTA', 'CETI DOMINGOS ALVES da COSTA'),
     ('UNIDADE ESCOLAR PAULO FERRAZ', 'UNIDADE ESCOLAR PAULO FERRAZ'),
-    ('COORDENADOR(A) PEDAGÓGICA(A)', 'COORDENADOR(A) PEDAGÓGICA(A)'),
+    ('CETI PAULO FERRAZ', 'CETI PAULO FERRAZ'),
     ('CETI JOSE NOGUEIRA de AGUIAR', 'CETI JOSE NOGUEIRA de AGUIAR'),
     ('UNIDADE ESCOLAR ALENCAR MOTA', 'UNIDADE ESCOLAR ALENCAR MOTA'),
     ('UNIDADE ESCOLAR MARIA CHAVES', 'UNIDADE ESCOLAR MARIA CHAVES'),
@@ -2210,7 +2272,7 @@ MAP_ESCOLA = [
     ('U. E. ARSÊNIO SANTOS', 'U. E. ARSÊNIO SANTOS'),
     ('ESCOLAR LANDRI SALES', 'ESCOLAR LANDRI SALES'),
     ('CETI JEREMIAS MOURA', 'CETI JEREMIAS MOURA'),
-    ('PROGRAMA ALFABETIZA', 'PROGRAMA ALFABETIZA'),
+    ('CETI JEREMIAS MOURA', 'CETI JEREMIAS MOURA'),
     ('CETI GERVÁSIO COSTA', 'CETI GERVÁSIO COSTA'),
     ('CETI LUCAS MEIRELIS', 'CETI LUCAS MEIRELIS'),
     ('CETI DOMINGOS ALVES', 'CETI DOMINGOS ALVES'),
@@ -2322,12 +2384,12 @@ MAP_ESCOLA = [
     ('CETI JOCA VIEIRA', 'CETI JOCA VIEIRA'),
     ('CETI JOSÉ AMAVEL', 'CETI JOSÉ AMAVEL'),
     ('CETI DEUSA ROCHA', 'CETI DEUSA ROCHA'),
-    ('SECRETÁRIA GERAL', 'SECRETÁRIA GERAL'),
+    ('CETI DEUSA ROCHA', 'CETI DEUSA ROCHA'),
     ('CETI LIMA REBELO', 'CETI LIMA REBELO'),
     ('CETI JOSE SOARES', 'CETI JOSE SOARES'),
     ('CETI PEDRA MOLE', 'CETI PEDRA MOLE'),
     ('CETI RUY BERGER', 'CETI RUY BERGER'),
-    ('UNIDADE ESCOLAR', 'UNIDADE ESCOLAR'),
+    ('CETI RUY BERGER', 'CETI RUY BERGER'),
     ('CETI ROCHA NETO', 'CETI ROCHA NETO'),
     ('CETI SANTA INÊS', 'CETI SANTA INÊS'),
     ('CETI PAULISTANA', 'CETI PAULISTANA'),
@@ -2358,18 +2420,29 @@ def normalize_escola(text_raw, search_only=False):
     
     text_upper = text_raw.upper().replace('\n', ' ').strip()
     
+    # Limpeza básica
+    text_upper = text_raw.upper()
+    
+    # Se contiver palavras que indicam que pegamos o nome da pessoa ou ação por engano
+    FORBIDDEN_SCHOOL_WORDS = ['DESIGNA', 'NOMEIA', 'CESSA', 'MATRÍCULA', 'MATRICULA', 'CPF', 'Nº', 'PROCESSO', 'IDENTIDADE']
+    if any(fw in text_upper for fw in FORBIDDEN_SCHOOL_WORDS):
+        return ""
+
     # 1. Tentar match prioritário (se o nome da lista está no texto)
     for k, v in MAP_ESCOLA:
-        # Usamos word boundary ou checagem de substring para evitar matches parciais errados
-        if k in text_upper:
+        # Usamos word boundary na chave se for curta para evitar matches parciais
+        if len(k) < 15:
+            pattern = r'\b' + re.escape(k) + r'\b'
+            if re.search(pattern, text_upper):
+                return v
+        elif k in text_upper:
             return v
             
     if search_only:
         return ""
         
-    # Se o texto for muito longo (provavelmente o corpo da portaria ou cabeçalho), 
-    # não retornamos ele se não houver match na lista oficial.
-    if len(text_raw) > 120:
+    # Se o texto for muito curto ou muito longo, descartamos como fallback
+    if len(text_raw) < 5 or len(text_raw) > 120:
         return ""
         
     return text_raw
@@ -2378,7 +2451,7 @@ def extract_and_normalize_funcao(p_text):
     text_upper = p_text.upper().replace('\n', ' ')
     
     # Tentativa 1: Focada rigorosa na palavra funcao/cargo
-    match_func = re.search(r'(?:fun[çc][ãa]o|cargo|como)\s*(?:(?:de\s+)?(?:gra|grati|rati)ficada[^\n]*?de\s+|(?:de\s+))?([A-ZÀ-Ú\s\(\)\-\/]{5,80}?)(?:\s+(?:do|da|no|na|pertencente|das|dos)\b|,|nesta)', text_upper, re.IGNORECASE)
+    match_func = re.search(r'(?:funç[aã]o|cargo|como)(?:\s+[A-ZÁÉÍÓÚÂÊÔÃÕÇ]+)?\s+de\s+([A-ZÁÉÍÓÚÂÊÔÃÕÇ\s\(\)\-\/]{5,100}?)(?:\s+(?:do|da|no|na|pertencente|das|dos)\b|,|nesta)', text_upper, re.IGNORECASE)
     if match_func:
         func_ext = match_func.group(1).strip()
         for k, v in MAP_FUNCAO:
@@ -2457,158 +2530,232 @@ def extract_data_from_text(filename, text):
                 match_data = re.search(r'(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})', p_text)
                 if match_data: p_data = match_data.group(1).strip()
 
-        # Identificamos todos os blocos de ação (Cessar/Designar) + Nome
-        # Procuramos por: VERBO + NOME + (Vírgula ou CPF ou Matrícula ou "para")
-        re_item = r'\b(Designar(?:\s+interinamente)?|Designou|Designa|Cessar|Nomear|Exonerar|Nome:|NOMEIA|DESIGNA|CESSA)\b\s+([A-ZÀ-Ú][A-ZÀ-Ú \n]{5,80}?)[\s\n]*(?:,|\s+(?:CPF|MATR[ÍI]CULA|PARA)\b)'
-        matches = list(re.finditer(re_item, p_text, re.IGNORECASE))
-        
-        if not matches:
-            matches = [None] # Caso não encontre nomes com verbos, tenta processar a portaria como um todo
-            
-        for idx, m in enumerate(matches):
-            if m:
-                start_match = m.start()
-                end_match = matches[idx+1].start() if idx+1 < len(matches) else len(p_text)
-                search_text = p_text[start_match:end_match]
-                verb_found = m.group(1).upper()
-                name_found = m.group(2).replace('\n', ' ').strip()
-            else:
-                search_text = p_text
-                verb_found = ""
-                name_found = ""
+        # Pega a data da assinatura da portaria (geralmente no final)
+        p_data = ""
+        match_data_final = re.findall(r'(\d{1,2}\s+de\s+[\wçÇ]+\s+de\s+\d{4})', p_text, re.IGNORECASE)
+        if match_data_final: p_data = match_data_final[-1].strip()
 
-            data = {
-                "nome do arquivo": filename,
-                "número do processo sei": p_sei,
-                "número do documento_sei": p_doc_sei,
-                "número da portaria": p_num,
-                "data": p_data,
-                "proposito": "Outros",
-                "nome": "",
-                "matricula": "",
-                "cpf": "",
-                "função": "",
-                "escola": "",
-                "município": "",
-                "gre": "",
-                "carga_horaria": "",
-                "portaria anterior": "",
-                "data_portaria_anterior": ""
-            }
+        # Identificamos se a portaria tem múltiplos artigos/ações
+        # Dividimos por "Art. 1º", "Art. 2º", etc.
+        blocos = re.split(r'(?i)\bArt\.(?:\s*\d+[º\.\s]*[-]*\s*)', p_text)
+        if len(blocos) > 1:
+            # Ignoramos o bloco 0 se for apenas o cabeçalho inicial (antes do Art. 1)
+            # Mas mantemos se houver nomes nele (raro, mas possível em preâmbulos)
+            textos_para_processar = []
+            if re.search(r'[A-ZÀ-Ú]{10,}', blocos[0]): textos_para_processar.append(blocos[0])
+            textos_para_processar.extend(blocos[1:])
+        else:
+            textos_para_processar = [p_text]
 
-            # Proposito (específico do bloco ou geral)
-            v_upper = verb_found.upper()
-            if any(x in v_upper for x in ["DESIGNAR", "DESIGNA", "DESIGNOU", "NOME"]):
-                data["proposito"] = "Designar"
-            elif any(x in v_upper for x in ["CESSAR", "EXONERAR"]):
-                data["proposito"] = "Cessar"
-            else:
-                # Fallback para o comportamento anterior se não houver verbo no match
-                if re.search(r'\bdesignar\b', p_text, re.IGNORECASE) and re.search(r'\bcessar\b', p_text, re.IGNORECASE):
-                    data["proposito"] = "Designar e Cessar"
-                elif re.search(r'\bdesignar\b', p_text, re.IGNORECASE):
-                    data["proposito"] = "Designar"
-                elif re.search(r'\bcessar\b', p_text, re.IGNORECASE):
-                    data["proposito"] = "Cessar"
-
-            if name_found:
-                data["nome"] = re.sub(r'\s+', ' ', name_found)
-            else:
-                match_nome = re.search(r'\b(Designar(?:\s+interinamente)?|Designou|Designa|Cessar|Nomear|Exonerar|Nome:?)\b(?:[\s\S]*?)\b([A-ZÀ-Ú][A-ZÀ-Ú \n]{5,80})(?:,|\s+(?:cpf|matr[íi]cula|para)\b)', p_text, re.IGNORECASE)
-                if match_nome:
-                    n = match_nome.group(2).replace('\n', ' ').strip()
-                    if len(n) > 5:
-                        data["nome"] = re.sub(r'\s+', ' ', n)
-
-            # Matrícula (flexível com quebras e espaços)
-            re_mat = r'Matr[íi]cula(?:[^0-9xX\n]{0,20})([0-9]{1,3}(?:[\s\.\n]*[0-9]{3})*[\s\.\n\-]*(?:[0-9]{1,3}|[0-9xX]))'
-            match_mat = re.search(re_mat, search_text, re.IGNORECASE)
-            if not match_mat: match_mat = re.search(re_mat, p_text, re.IGNORECASE)
-            if match_mat:
-                data["matricula"] = re.sub(r'[\s\n]+', '', match_mat.group(1)).strip(' .')
+        for block_text in textos_para_processar:
+            # Encontrar nomes no bloco
+            # Buscamos nomes em maiúsculas seguidos de vírgula, CPF ou Matrícula
+            re_nome_bloco = r'\b([A-ZÀ-Ú]{3,}(?:\s+[A-ZÀ-Ú]{2,}){2,8})\b(?:\s*,\s*|\s+(?:CPF|MATR[ÍI]CULA|PARA)\b)'
+            for m_nome in re.finditer(re_nome_bloco, block_text):
+                potential_name = m_nome.group(1).strip()
                 
-            # CPF (flexível com quebras, pontos e hífens opcionais)
-            re_cpf = r'(?:CPF|C\.P\.F)[^\d]*(\d{3}(?:[\s\.\n]*\d{3}){2}(?:[\s\.\n\-]*\d{2}))'
-            match_cpf = re.search(re_cpf, search_text, re.IGNORECASE)
-            if not match_cpf: match_cpf = re.search(re_cpf, p_text, re.IGNORECASE)
-            if match_cpf:
-                cpf_raw = re.sub(r'[^\d]', '', match_cpf.group(1))
-                if len(cpf_raw) == 11:
-                    data["cpf"] = f"{cpf_raw[:3]}.{cpf_raw[3:6]}.{cpf_raw[6:9]}-{cpf_raw[9:]}"
-                else:
-                    data["cpf"] = re.sub(r'[\s\n]+', '', match_cpf.group(1))
+                # Filtragem: ignora se contiver palavras da blacklist ou se for um nome de escola conhecido
+                if any(k in potential_name.upper() for k in KEYWORDS_NOT_NAME):
+                    continue
                 
-            # Função
-            data["função"] = extract_and_normalize_funcao(search_text)
-            if not data["função"]: data["função"] = extract_and_normalize_funcao(p_text)
-                
-            # Escola
-            re_escola_prefixes = r'(?:Escola Estadual|Unidade Escolar|U\.?\s*E\.?|Unid\.?\s*Esc\.?|CETI|C\.E\.T\.I\.|CEPI|Col[ée]gio Estadual|Centro [Ee]stadual [Dd]e [Tt]empo [Ii]ntegral|C\.?E\.?P\.?I\.?|Unidade Escolar)'
-            re_escola_stops = r'(?:[-,\–\.]|\n| para\b| no munic[íi]p[íi]o\b| no Munic[ií]p[ií]o\b| Av\.\s*Pedro\b| Telefone\b| http\b| Ger[êe]ncia\b)'
-            match_esc = re.search(re_escola_prefixes + r"[^\w]*([\w\s'’À-Ú]{3,100}?)(?=" + re_escola_stops + r")", search_text, re.IGNORECASE)
-            if not match_esc: match_esc = re.search(re_escola_prefixes + r"[^\w]*([\w\s'’À-Ú]{3,100}?)(?=" + re_escola_stops + r")", p_text, re.IGNORECASE)
-            
-            if match_esc:
-                esc_raw = match_esc.group(1).strip()
-                data["escola"] = normalize_escola(esc_raw)
-            else:
-                # Tentativa de busca direta por qualquer escola da lista no texto caso o prefixo falhe
-                data["escola"] = normalize_escola(p_text, search_only=True)
-                
-            # Município
-            match_mun = re.search(r"Munic[íi]p[íi]o(?:[^\w]*)([\w\s'’]{3,30})(?:[-,\–\.]|\n)", search_text, re.IGNORECASE)
-            if not match_mun: match_mun = re.search(r"Munic[íi]p[íi]o(?:[^\w]*)([\w\s'’]{3,30})(?:[-,\–\.]|\n)", p_text, re.IGNORECASE)
-            if match_mun:
-                mun_raw = re.sub(r'\s+', ' ', match_mun.group(1)).strip()
-                mun_clean = re.sub(r'^(?:de|do|da|dos|das)\b\s*', '', mun_raw, flags=re.IGNORECASE).strip()
-                mun_upper = mun_clean.upper()
-                normalized_mun = mun_clean
-                for k, v in MAP_CIDADE:
-                    pattern = r'(?<![A-ZÀ-Ú])' + re.escape(k) + r'(?![A-ZÀ-Ú])'
-                    if re.search(pattern, mun_upper):
-                        normalized_mun = v
+                # Ignora se for idêntico a um nome de escola oficial
+                is_school = False
+                for k_esc, v_esc in MAP_ESCOLA:
+                    if k_esc == potential_name.upper():
+                        is_school = True
                         break
-                data["município"] = normalized_mun
+                if is_school: continue
 
-            # Normalização de Município (Secretaria/Capital)
-            if not data["município"]:
-                if re.search(r'nesta\s+Secretaria', p_text, re.IGNORECASE):
-                    data["município"] = "TERESINA"
-                elif re.search(r'nesta\s+Capital', p_text, re.IGNORECASE):
-                    data["município"] = "TERESINA"
-                elif re.search(r'nesta\s+SEDUC', p_text, re.IGNORECASE):
-                    data["município"] = "TERESINA"
-                re_gres_capital = r'((4ª|18ª|19ª|20ª|21ª)\s+)?GER[ÊE]NCIA\s+REGIONAL\s+DE\s+EDUCA[ÇC][ÃA]O.*nesta\s+capital'
-                if re.search(re_gres_capital, p_text, re.IGNORECASE):
-                    data["município"] = "TERESINA"
+                name_found = potential_name
+                start_match = m_nome.start()
+                end_match = m_nome.end()
+                
+                # Contexto para busca de outros dados: focamos no texto próximo ao nome
+                # para evitar confusão com outros nomes na mesma portaria.
+                # Pegamos 50 chars antes e 500 chars depois (o resto da frase).
+                context_start = max(0, start_match - 50)
+                context_end = min(len(block_text), end_match + 600)
+                search_text = block_text[context_start:context_end]
 
-            # Identificação da GRE baseada no Município
-            if data["município"]:
-                mun_upper = data["município"].upper()
-                if mun_upper in MAP_GRE:
-                    data["gre"] = MAP_GRE[mun_upper]
-                
-                # Se for Teresina, tenta refinar a GRE pelo texto (4ª, 19ª, 20ª ou 21ª)
-                if mun_upper == "TERESINA":
-                    match_gre_text = re.search(r'(\d{1,2})ª?\s*GER[ÊE]NCIA\s+REGIONAL', p_text, re.IGNORECASE)
-                    if not match_gre_text: match_gre_text = re.search(r'(\d{1,2})ª?\s*GRE', p_text, re.IGNORECASE)
-                    if match_gre_text:
-                        data["gre"] = f"{match_gre_text.group(1)}ª"
+                data = {
+                    "nome do arquivo": filename,
+                    "número do processo sei": p_sei,
+                    "número do documento_sei": p_doc_sei,
+                    "número da portaria": p_num,
+                    "data": p_data,
+                    "proposito": "Outros",
+                    "nome": "",
+                    "matricula": "",
+                    "cpf": "",
+                    "função": "",
+                    "gratificação": "",
+                    "escola": "",
+                    "município": "",
+                    "gre": "",
+                    "carga_horaria": "",
+                    "período": "",
+                    "portaria anterior": "",
+                    "data_portaria_anterior": ""
+                }
 
-            # Carga horária
-            match_ch = re.search(r'(\d{1,3})\s*(?:horas|h|H)[/ ](?:semanais|s)', search_text, re.IGNORECASE)
-            if not match_ch: match_ch = re.search(r'(\d{1,3})\s*(?:horas|h|H)[/ ](?:semanais|s)', p_text, re.IGNORECASE)
-            if match_ch:
-                data["carga_horaria"] = match_ch.group(1).strip()
+                # Proposito: Busca o verbo de ação no bloco
+                # Verificação prioritária de afastamentos/licenças
+                if re.search(r'Licen[çc]a\s+Maternidade', block_text, re.IGNORECASE):
+                    data["proposito"] = "Afastamento Licença Maternidade"
+                # Se encontrar "CESSAR" no bloco, e o nome está depois, provavelmente é o propósito principal
+                elif re.search(r'\bCESSAR\b', block_text, re.IGNORECASE):
+                    data["proposito"] = "Cessar"
+                elif re.search(r'\b(?:DESIGNAR|NOMEAR)\b', block_text, re.IGNORECASE):
+                    data["proposito"] = "Designar"
+                elif re.search(r'\bEXONERAR\b', block_text, re.IGNORECASE):
+                    data["proposito"] = "Cessar"
+                else:
+                    # Fallback para o comportamento anterior
+                    if re.search(r'\bdesignar\b', p_text, re.IGNORECASE) and re.search(r'\bcessar\b', p_text, re.IGNORECASE):
+                        data["proposito"] = "Designar e Cessar"
+                    elif re.search(r'\bdesignar\b', p_text, re.IGNORECASE):
+                        data["proposito"] = "Designar"
+                    elif re.search(r'\bcessar\b', p_text, re.IGNORECASE):
+                        data["proposito"] = "Cessar"
+
+                if name_found:
+                    data["nome"] = re.sub(r'\s+', ' ', name_found)
+
+                # Matrícula (flexível com quebras e espaços)
+                re_mat = r'Matr[íi]cula(?:[^0-9xX\n]{0,20})([0-9]{1,3}(?:[\s\.\n]*[0-9]{3})*[\s\.\n\-]*(?:[0-9]{1,3}|[0-9xX]))'
+                match_mat = re.search(re_mat, search_text, re.IGNORECASE)
+                if not match_mat: match_mat = re.search(re_mat, p_text, re.IGNORECASE)
+                if match_mat:
+                    data["matricula"] = re.sub(r'[\s\n]+', '', match_mat.group(1)).strip(' .')
+                    
+                # CPF (flexível com quebras, pontos e hífens opcionais)
+                re_cpf = r'(?:CPF|C\.P\.F)[^\d]*(\d{3}(?:[\s\.\n]*\d{3}){2}(?:[\s\.\n\-]*\d{2}))'
+                match_cpf = re.search(re_cpf, search_text, re.IGNORECASE)
+                if not match_cpf: match_cpf = re.search(re_cpf, p_text, re.IGNORECASE)
+                if match_cpf:
+                    cpf_raw = re.sub(r'[^\d]', '', match_cpf.group(1))
+                    if len(cpf_raw) == 11:
+                        data["cpf"] = f"{cpf_raw[:3]}.{cpf_raw[3:6]}.{cpf_raw[6:9]}-{cpf_raw[9:]}"
+                    else:
+                        data["cpf"] = re.sub(r'[\s\n]+', '', match_cpf.group(1))
+                    
+                # Normalização de texto para campos que podem ter quebras de linha (escola, função, etc)
+                search_text_clean = re.sub(r'[\r\n\t]+', ' ', search_text).strip()
+                p_text_clean = re.sub(r'[\r\n\t]+', ' ', p_text).strip()
+
+                # Função
+                data["função"] = extract_and_normalize_funcao(search_text_clean)
+                if not data["função"]: data["função"] = extract_and_normalize_funcao(p_text_clean)
                 
-            # Portaria anterior
-            match_port_ant = re.search(r'Portaria\s*(?:Nº|nº)?\s*(\d+[\/\-\.]\d*)[ \w]{1,10}(?:de )?(\d{1,2}/\d{1,2}/\d{2,4}|\d{1,2} de [a-z]+ de \d{4})', search_text, re.IGNORECASE)
-            if not match_port_ant: match_port_ant = re.search(r'Portaria\s*(?:Nº|nº)?\s*(\d+[\/\-\.]\d*)[ \w]{1,10}(?:de )?(\d{1,2}/\d{1,2}/\d{2,4}|\d{1,2} de [a-z]+ de \d{4})', p_text, re.IGNORECASE)
-            if match_port_ant:
-                data["portaria anterior"] = match_port_ant.group(1).strip()
-                data["data_portaria_anterior"] = match_port_ant.group(2).strip()
+                # Gratificação / Símbolo
+                # Padrão: símbolo DAC-1 ou gratificada DAI-4 (aceita 'gra ficada' por erro de OCR)
+                re_grat_pattern = r'(?:s[íi]mbolo|gratificada|gra\s*ficada)\s+([A-Z]{2,4}[-\s]?\d+)'
+                match_grat = re.search(re_grat_pattern, search_text_clean, re.IGNORECASE)
+                if match_grat:
+                    data["gratificação"] = match_grat.group(1).upper().replace(' ', '-')
+                    
+                # === NOVA LÓGICA DE EXTRAÇÃO DE ESCOLA ===
+                # Prefixos comuns de escola, incluindo formas abreviadas
+                re_prefixos_esc = r'(?:UNIDADE ESCOLAR|UNID\.?\s*ESC\.?|U\.?\s*E\.?|CETI|C\.E\.T\.I\.|CEJA|CEEP|CEEPRU|CENTRO ESTADUAL DE TEMPO INTEGRAL|CENTRO ESTADUAL DE EDUCAÇÃO PROFISSIONAL|ESCOLA ESTADUAL|COLÉGIO ESTADUAL|CEPI)'
                 
-            results.append(data)
+                # Regex focada: busca preposição (do/da/no/na/pela) + prefixo + nome até o município ou vírgula
+                # Exemplos: "da UNIDADE ESCOLAR X, no município de Y" ou "do CETI Z"
+                re_escola_pattern = r'(?:do|da|no|na|pela|pelo|ao|à)\s+(' + re_prefixos_esc + r')\s+([A-ZÀ-Ú\s\'’\.]{3,100}?)(?=[,\.]| no munic| no Munic| para\b)'
+                
+                match_esc = re.search(re_escola_pattern, search_text_clean, re.IGNORECASE)
+                # Se não achar na janela próxima, tenta no bloco inteiro sem a exigência da preposição inicial (mais flexível)
+                if not match_esc:
+                    re_escola_flex = r'(' + re_prefixos_esc + r')\s+([A-ZÀ-Ú\s\'’\.]{3,100}?)(?=[,\.]| no munic| no Munic| para\b)'
+                    match_esc = re.search(re_escola_flex, search_text_clean, re.IGNORECASE)
+                
+                if not match_esc:
+                    # Última tentativa no artigo completo
+                    match_esc = re.search(re_escola_pattern, p_text_clean, re.IGNORECASE)
+
+                if match_esc:
+                    # Combinamos o prefixo encontrado com o nome específico
+                    prefixo_encontrado = match_esc.group(1).strip()
+                    nome_especifico = match_esc.group(2).strip()
+                    esc_raw = f"{prefixo_encontrado} {nome_especifico}"
+                    data["escola"] = normalize_escola(esc_raw)
+                else:
+                    # Se falhar via Regex, busca direta por nomes conhecidos da lista
+                    data["escola"] = normalize_escola(p_text, search_only=True)
+                # =========================================
+                    
+                # Município
+                match_mun = re.search(r"Munic[íi]p[íi]o(?:[^\w]*)([\w\s'’]{3,30})(?:[-,\–\.]|\n)", search_text, re.IGNORECASE)
+                if not match_mun: match_mun = re.search(r"Munic[íi]p[íi]o(?:[^\w]*)([\w\s'’]{3,30})(?:[-,\–\.]|\n)", p_text, re.IGNORECASE)
+                if match_mun:
+                    mun_raw = re.sub(r'\s+', ' ', match_mun.group(1)).strip()
+                    mun_clean = re.sub(r'^(?:de|do|da|dos|das)\b\s*', '', mun_raw, flags=re.IGNORECASE).strip()
+                    mun_upper = mun_clean.upper()
+                    normalized_mun = mun_clean
+                    for k, v in MAP_CIDADE:
+                        pattern = r'(?<![A-ZÀ-Ú])' + re.escape(k) + r'(?![A-ZÀ-Ú])'
+                        if re.search(pattern, mun_upper):
+                            normalized_mun = v
+                            break
+                    data["município"] = normalized_mun
+
+                # Normalização de Município (Secretaria/Capital)
+                if not data["município"]:
+                    if re.search(r'nesta\s+Secretaria', p_text, re.IGNORECASE):
+                        data["município"] = "TERESINA"
+                    elif re.search(r'nesta\s+Capital', p_text, re.IGNORECASE):
+                        data["município"] = "TERESINA"
+                    elif re.search(r'nesta\s+SEDUC', p_text, re.IGNORECASE):
+                        data["município"] = "TERESINA"
+                    re_gres_capital = r'((4ª|18ª|19ª|20ª|21ª)\s+)?GER[ÊE]NCIA\s+REGIONAL\s+DE\s+EDUCA[ÇC][ÃA]O.*nesta\s+capital'
+                    if re.search(re_gres_capital, p_text, re.IGNORECASE):
+                        data["município"] = "TERESINA"
+
+                # Identificação da GRE baseada no Município
+                if data["município"]:
+                    mun_upper = data["município"].upper()
+                    if mun_upper in MAP_GRE:
+                        data["gre"] = MAP_GRE[mun_upper]
+                    
+                    # Se for Teresina, tenta refinar a GRE pelo texto (4ª, 19ª, 20ª ou 21ª)
+                    if mun_upper == "TERESINA":
+                        match_gre_text = re.search(r'(\d{1,2})ª?\s*GER[ÊE]NCIA\s+REGIONAL', p_text, re.IGNORECASE)
+                        if not match_gre_text: match_gre_text = re.search(r'(\d{1,2})ª?\s*GRE', p_text, re.IGNORECASE)
+                        if match_gre_text:
+                            data["gre"] = f"{match_gre_text.group(1)}ª"
+
+                # Carga horária
+                # Tentativa 1: Padrão formal "regime de X (extenso) horas"
+                match_ch = re.search(r"em\s+regime\s+de\s*(\d+)\s*(?:\(\s*[A-ZÁÉÍÓÚÂÊÔÃÕÇ\s]*\s*\))?\s*,?\s*horas", search_text, re.IGNORECASE)
+                
+                # Tentativa 2: Padrão para Professor Substituto "(Prof. Subs. XXh)"
+                if not match_ch:
+                    match_ch = re.search(r'\(Prof\.\s*Subs\.\s*(20|40)h\)', search_text, re.IGNORECASE)
+                
+                # Tentativa 3: Padrão genérico de horas semanais
+                if not match_ch:
+                    match_ch = re.search(r'(\d{1,3})\s*(?:horas|h|H)[/ ](?:semanais|s)', search_text, re.IGNORECASE)
+                if not match_ch:
+                    match_ch = re.search(r'(\d{1,3})\s*(?:horas|h|H)[/ ](?:semanais|s)', p_text, re.IGNORECASE)
+                
+                if match_ch:
+                    data["carga_horaria"] = match_ch.group(1).strip()
+                    
+                # Portaria anterior (frequente em portarias de "Cessar")
+                re_port_ant = r'Portaria\s+[A-Z\s]*\s*(?:Nº|nº|n[oº\.\s])?\s*(\d+[\/\-]\d+)[^0-9\n]{1,20}(\d{1,2}(?:\/|\s+de\s+)[0-9a-z]+(?:\/|\s+de\s+)\d{4})'
+                match_port_ant = re.search(re_port_ant, search_text, re.IGNORECASE)
+                if not match_port_ant: match_port_ant = re.search(re_port_ant, p_text, re.IGNORECASE)
+                if match_port_ant:
+                    data["portaria anterior"] = match_port_ant.group(1).strip()
+                    data["data_portaria_anterior"] = match_port_ant.group(2).strip()
+                    
+                # Período (comum em licenças e substituições)
+                re_periodo = r'no\s+per[íi]odo\s+de\s+(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})\s+a\s+(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})'
+                match_periodo = re.search(re_periodo, search_text, re.IGNORECASE)
+                if not match_periodo: match_periodo = re.search(re_periodo, p_text, re.IGNORECASE)
+                if match_periodo:
+                    data["período"] = f"{match_periodo.group(1)} a {match_periodo.group(2)}"
+                    
+                results.append(data)
     
     return results
 
