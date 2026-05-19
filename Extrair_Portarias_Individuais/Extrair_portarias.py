@@ -5,7 +5,6 @@ import re
 try:
     import pdfplumber
     import pandas as pd
-    import json
 except ImportError:
     print('Por favor, instale as bibliotecas necessárias: pip install pdfplumber pandas openpyxl')
     exit(1)
@@ -2479,7 +2478,7 @@ except ImportError:
     exit(1)
 
 # Diretório
-base_dir = r"D:\Portaria gestores\Portarias Gerais"
+base_dir = r"D:\Seduc - SCP\Portarias\Portarias individuais gerais"
 output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "base_portarias_extraidas.xlsx")
 
 def extract_data_from_text(filename, text):
@@ -2760,36 +2759,6 @@ def extract_data_from_text(filename, text):
     
     return results
 
-def atualizar_html(df):
-    """Lê o arquivo portarias_consulta.html e injeta o JSON gerado na variável DATA."""
-    html_file = 'portarias_consulta.html'
-    
-    if not os.path.exists(html_file):
-        print(f"Aviso: O arquivo '{html_file}' não foi encontrado. O HTML não será atualizado.")
-        return
-
-    # Converte o DataFrame para formato de dicionário compatível com JSON
-    # Substitui NaNs por strings vazias
-    df_json = df.fillna('').to_dict(orient='records')
-    json_string = json.dumps(df_json, ensure_ascii=False)
-    
-    with open(html_file, 'r', encoding='utf-8') as f:
-        html_content = f.read()
-
-    # Expressão regular para encontrar onde a variável DATA = [...] está
-    # Isso vai substituir qualquer array JSON na declaração const DATA =
-    novo_html = re.sub(
-        r'(const\s+DATA\s*=\s*)\[.*?\](;?)',
-        lambda m: f"{m.group(1)}{json_string}{m.group(2)}",
-        html_content,
-        flags=re.DOTALL
-    )
-
-    with open(html_file, 'w', encoding='utf-8') as f:
-        f.write(novo_html)
-        
-    print(f"Sucesso! Os dados foram injetados no '{html_file}'.")
-
 def process_pdfs():
     all_data = []
     
@@ -2846,13 +2815,6 @@ def process_pdfs():
             print(f"Erro ao salvar Excel: {e}")
             df.to_csv(output_file.replace('.xlsx', '.csv'), index=False, sep=';', encoding='utf-8-sig')
             print("Salvo como CSV como alternativa.")
-            
-        # --- INTEGRAÇÃO COM O HTML ---
-        print("\nInjetando os novos dados no arquivo HTML de consulta...")
-        try:
-            atualizar_html(df)
-        except Exception as e:
-            print(f"Erro ao atualizar o HTML: {e}")
     else:
         print("Nenhum dado extraído.")
 
