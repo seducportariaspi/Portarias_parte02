@@ -2761,8 +2761,8 @@ def extract_data_from_text(filename, text):
     return results
 
 def atualizar_html(df):
-    """Lê o arquivo portarias_consulta.html e injeta o JSON gerado na variável DATA."""
-    html_file = 'portarias_consulta.html'
+    """Lê o arquivo index.html e injeta o JSON gerado na variável DATA."""
+    html_file = 'index.html'
     
     if not os.path.exists(html_file):
         print(f"Aviso: O arquivo '{html_file}' não foi encontrado. O HTML não será atualizado.")
@@ -2800,8 +2800,34 @@ def process_pdfs():
     pdf_files = [f for f in os.listdir(base_dir) if f.lower().endswith('.pdf')]
     print(f"Encontrados {len(pdf_files)} arquivos PDF na pasta.")
     
-    for i, file in enumerate(pdf_files):
-        print(f"Processando [{i+1}/{len(pdf_files)}]: {file}")
+    existing_df = None
+    processed_files = set()
+    
+    # 1. Tentar ler os dados existentes
+    try:
+        if os.path.exists(output_file):
+            existing_df = pd.read_excel(output_file)
+        elif os.path.exists(output_file.replace('.xlsx', '.csv')):
+            existing_df = pd.read_csv(output_file.replace('.xlsx', '.csv'), sep=';')
+            
+        if existing_df is not None and "arquivo" in existing_df.columns:
+            processed_files = set(existing_df["arquivo"].dropna().unique())
+            print(f"[{len(processed_files)}] arquivos já processados e armazenados.")
+        elif existing_df is not None and "nome do arquivo" in existing_df.columns:
+            processed_files = set(existing_df["nome do arquivo"].dropna().unique())
+            print(f"[{len(processed_files)}] arquivos já processados e armazenados.")
+    except Exception as e:
+        print(f"Aviso: Não foi possível carregar o histórico anterior. Todos serão processados. ({e})")
+        
+    new_pdfs = [f for f in pdf_files if f not in processed_files]
+    if not new_pdfs:
+        print("Todos os PDFs já foram processados. Nenhum dado novo para extrair.")
+        return
+        
+    print(f"Processando {len(new_pdfs)} novos PDFs...")
+    
+    for i, file in enumerate(new_pdfs):
+        print(f"Processando [{i+1}/{len(new_pdfs)}]: {file}")
         filepath = os.path.join(base_dir, file)
         
         try:
@@ -2833,12 +2859,24 @@ def process_pdfs():
         except Exception as e:
             print(f"Erro ao processar {file}: {e}")
             all_data.append({
+                "arquivo": file,
                 "nome do arquivo": file,
                 "proposito": "Erro no processamento"
             })
             
     if all_data:
-        df = pd.DataFrame(all_data)
+        new_df = pd.DataFrame(all_data)
+        
+        # Garante a chave 'arquivo' (usada no HTML)
+        if "nome do arquivo" in new_df.columns and "arquivo" not in new_df.columns:
+            new_df["arquivo"] = new_df["nome do arquivo"]
+            
+        if existing_df is not None:
+            # Junta o que existia com os novos
+            df = pd.concat([existing_df, new_df], ignore_index=True)
+        else:
+            df = new_df
+
         try:
             df.to_excel(output_file, index=False)
             print(f"\n>>> Processamento concluído. Arquivo salvo em:\n{output_file}")
@@ -2854,7 +2892,7 @@ def process_pdfs():
         except Exception as e:
             print(f"Erro ao atualizar o HTML: {e}")
     else:
-        print("Nenhum dado extraído.")
+        print("Nenhum dado extraído dos novos arquivos.")
 
 if __name__ == "__main__":
     process_pdfs()
