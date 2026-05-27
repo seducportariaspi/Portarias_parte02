@@ -2779,7 +2779,7 @@ def atualizar_html(df):
     # Expressão regular para encontrar onde a variável DATA = [...] está
     # Isso vai substituir qualquer array JSON na declaração const DATA =
     novo_html = re.sub(
-        r'(const\s+DATA\s*=\s*)\[.*?\](;?)',
+        r'(const\s+LOCAL_DATA\s*=\s*)\[.*?\](;?)',
         lambda m: f"{m.group(1)}{json_string}{m.group(2)}",
         html_content,
         flags=re.DOTALL
